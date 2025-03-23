@@ -26,12 +26,12 @@ const App = () => {
 
   return (
     <Routes>
-      {routes.map(({ path, element, protected: diquwbd }) => (
+      {routes.map(({ path, element, protected: isProtected }) => (
         <Route
           key={path}
           path={path}
           element={
-            diquwbd ? (
+            isProtected ? (
               <ProtectedRoute token={token} redirectTo="/login">
                 {element}
               </ProtectedRoute>
