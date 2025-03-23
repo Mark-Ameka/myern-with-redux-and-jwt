@@ -42,9 +42,11 @@ const ChangeBook = () => {
 
   useEffect(() => {
     if (error || success) {
-      setTimeout(() => {
+      const timer = setTimeout(() => {
         dispatch(resetMessages());
       }, 2000);
+
+      return () => clearTimeout(timer);
     }
   }, [dispatch, error, success]);
 
